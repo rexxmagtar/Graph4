@@ -62,7 +62,7 @@ public class MainWindow extends JFrame {
                     System.out.println(ex.getMessage());
                 }
                 drawingPanel.drawPoints(algorithm.stepByStep(x1, y1, x2, y2));
-                timeLabel.setText("Time: " + algorithm.lastTime / 1000 + " ms");
+                timeLabel.setText("Время: " + algorithm.lastTime / 1000 + " мс");
             }
         });
         add(stepByStepButton);
@@ -82,7 +82,7 @@ public class MainWindow extends JFrame {
 
                 }
                 drawingPanel.drawPoints(algorithm.cda(x1, y1, x2, y2));
-                timeLabel.setText("Time: " + algorithm.lastTime / 1000 + " ms");
+                timeLabel.setText("Время: " + algorithm.lastTime / 1000 + " мс");
 
             }
         });
@@ -103,7 +103,7 @@ public class MainWindow extends JFrame {
 
                 }
                 drawingPanel.drawPoints(algorithm.brezenkhem(x1, y1, x2, y2));
-                timeLabel.setText("Time: " + algorithm.lastTime / 1000 + " ms");
+                timeLabel.setText("Время: " + algorithm.lastTime / 1000 + " мс");
 
             }
         });
@@ -123,7 +123,7 @@ public class MainWindow extends JFrame {
 
                 }
                 drawingPanel.drawPoints(algorithm.brezenkhemCircle(x1, y1, r));
-                timeLabel.setText("Время: " + algorithm.lastTime / 1000 + " ms");
+                timeLabel.setText("Время: " + algorithm.lastTime / 1000 + " мс");
             }
         });
         add(brezenkhemCircleButton);
