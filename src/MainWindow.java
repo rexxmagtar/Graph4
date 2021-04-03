@@ -24,7 +24,7 @@ public class MainWindow extends JFrame {
     private JButton clearButton;
 
     private final double PANEL_SCALE_W = 0.7;
-    private final double PANEL_SCALE_H = 1.0;
+    private final double PANEL_SCALE_H = 0.7;
 
     private Algorithm algorithm = new Algorithm();
 
@@ -34,20 +34,21 @@ public class MainWindow extends JFrame {
         setVisible(true);
         setLayout(null);
 
-        drawingPanel.setBounds((int) ((1 - PANEL_SCALE_W) * WIDTH), 0, (int) (PANEL_SCALE_W * WIDTH), (int) (PANEL_SCALE_H * HEIGHT));
+        drawingPanel.setBounds((int) ((1 - PANEL_SCALE_W) * WIDTH), 10, (int) (PANEL_SCALE_W * WIDTH), (int) (PANEL_SCALE_H * HEIGHT));
         add(drawingPanel);
 
 
         Font labelFont = new Font("Serif", Font.PLAIN, 25);
 
-        JLabel timeLabel = new JLabel("Time:");
+        JLabel timeLabel = new JLabel("Время:");
         timeLabel.setFont(labelFont);
         timeLabel.setBounds(10, 500, 150, 40);
         add(timeLabel);
 
 
-        stepByStepButton = new JButton("step by step");
-        stepByStepButton.setBounds(10, 10, 160, 40);
+        stepByStepButton = new JButton("Шаг за шагом");
+
+        stepByStepButton.setBounds(10, 10, 240, 40);
         stepByStepButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,8 +67,8 @@ public class MainWindow extends JFrame {
         });
         add(stepByStepButton);
 
-        DADButton = new JButton("DAD");
-        DADButton.setBounds(10, 60, 160, 40);
+        DADButton = new JButton("ЦДА");
+        DADButton.setBounds(10, 60, 240, 40);
         DADButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,8 +88,8 @@ public class MainWindow extends JFrame {
         });
         add(DADButton);
 
-        brezenkhemButton = new JButton("Brezenkhem");
-        brezenkhemButton.setBounds(10, 110, 160, 40);
+        brezenkhemButton = new JButton("Брезенхем");
+        brezenkhemButton.setBounds(10, 110, 240, 40);
         brezenkhemButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -108,8 +109,8 @@ public class MainWindow extends JFrame {
         });
         add(brezenkhemButton);
 
-        brezenkhemCircleButton = new JButton("Bezenkhem circle");
-        brezenkhemCircleButton.setBounds(10, 160, 160, 40);
+        brezenkhemCircleButton = new JButton("Брезенхем (окружность)");
+        brezenkhemCircleButton.setBounds(10, 160, 240, 40);
         brezenkhemCircleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,13 +123,13 @@ public class MainWindow extends JFrame {
 
                 }
                 drawingPanel.drawPoints(algorithm.brezenkhemCircle(x1, y1, r));
-                timeLabel.setText("Time: " + algorithm.lastTime / 1000 + " ms");
+                timeLabel.setText("Время: " + algorithm.lastTime / 1000 + " ms");
             }
         });
         add(brezenkhemCircleButton);
 
-        clearButton = new JButton("Clear");
-        clearButton.setBounds(10, 550, 200, 40);
+        clearButton = new JButton("Очистить");
+        clearButton.setBounds(10, 550, 240, 40);
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -138,7 +139,7 @@ public class MainWindow extends JFrame {
 
         add(clearButton);
 
-        JLabel x1Label = new JLabel("X1: ");
+        JLabel x1Label = new JLabel("x 1: ");
         x1Label.setFont(labelFont);
         x1Label.setBounds(10, 250, 50, 40);
         add(x1Label);
@@ -147,7 +148,7 @@ public class MainWindow extends JFrame {
         x1Input.setFont(labelFont);
         add(x1Input);
 
-        JLabel y1Label = new JLabel("Y1: ");
+        JLabel y1Label = new JLabel("y 1: ");
         y1Label.setFont(labelFont);
         y1Label.setBounds(10, 300, 50, 40);
         add(y1Label);
@@ -157,7 +158,7 @@ public class MainWindow extends JFrame {
         add(y1Input);
 
 
-        JLabel x2Label = new JLabel("X2: ");
+        JLabel x2Label = new JLabel("x 2: ");
         x2Label.setFont(labelFont);
         x2Label.setBounds(10, 350, 50, 40);
         add(x2Label);
@@ -167,7 +168,7 @@ public class MainWindow extends JFrame {
         add(x2Input);
 
 
-        JLabel y2Label = new JLabel("Y2: ");
+        JLabel y2Label = new JLabel("y 2: ");
         y2Label.setFont(labelFont);
         y2Label.setBounds(10, 400, 50, 40);
         add(y2Label);
@@ -176,12 +177,12 @@ public class MainWindow extends JFrame {
         y2Input.setFont(labelFont);
         add(y2Input);
 
-        JLabel radiusLabel = new JLabel("Rad.: ");
+        JLabel radiusLabel = new JLabel("радиус: ");
         radiusLabel.setFont(labelFont);
-        radiusLabel.setBounds(10, 450, 60, 40);
+        radiusLabel.setBounds(10, 450, 100, 40);
         add(radiusLabel);
 
-        radiusInput.setBounds(70, 450, 100, 40);
+        radiusInput.setBounds(100, 450, 100, 40);
         radiusInput.setFont(labelFont);
         add(radiusInput);
 

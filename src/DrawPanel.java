@@ -9,7 +9,7 @@ public class DrawPanel extends JPanel {
 
     private int numCellsX = 30;
     private int numCellsY;
-    private int cellSize = 10;
+    private int cellSize = 5;
     private ArrayList<Point> points = new ArrayList<>();
 
     @Override
