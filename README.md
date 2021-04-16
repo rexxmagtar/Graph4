@@ -6,3 +6,6 @@
 
 Пример работы:
 ![image](https://user-images.githubusercontent.com/51932532/115094768-66131680-9f27-11eb-9c53-35f015d77a40.png)
+
+
+По пути (out/artifacts/lab_4_jar) лежит jar файл для проверки работы приложения.
